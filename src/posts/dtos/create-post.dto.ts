@@ -1,7 +1,7 @@
 import { IsArray, IsEnum, IsISO8601, IsNotEmpty, IsOptional, IsString, IsUrl, MinLength, ValidateNested } from "class-validator";
 import { postType } from "../enums/postType.enum";
 import { postStatus } from "../enums/postStatus.enum";
-import { CreatePostMetaOptionDto } from "./crate-post-meta-options.dto";
+import { CreatePostMetaOptionDto } from "../../meta-options/dtos/crate-post-meta-options.dto";
 import { Type } from "class-transformer";
 
 export class createPostDTO {

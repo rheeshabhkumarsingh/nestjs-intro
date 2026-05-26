@@ -39,12 +39,6 @@ export class Tag {
     })
     fraturedImageUrl?: string;
 
-    @Column({
-        type: 'varchar',
-        length: 96,
-        nullable: false
-    })
-
     @CreateDateColumn()
     createDate: Date;
 
