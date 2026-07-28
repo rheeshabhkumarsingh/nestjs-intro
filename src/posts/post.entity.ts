@@ -1,4 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { CreatePostMetaOptionDto } from "../meta-options/dtos/crate-post-meta-options.dto";
 
 @Entity()
 export class Posts {
@@ -67,12 +68,12 @@ export class Posts {
         length: 96,
         nullable: false
     })
-    tags!: string[];
+    tags?: string[];
     
     @Column({
         type: 'varchar',
         length: 96,
         nullable: false
     })
-    metaOption!: string[];
+    metaOption?: CreatePostMetaOptionDto[];
 }

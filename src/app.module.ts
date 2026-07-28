@@ -10,6 +10,7 @@ import { Posts } from './posts/post.entity';
 import { TagModule } from './tag/tag.module';
 import { Tag } from './tag/tag.entity';
 import { MetaOptionsModule } from './meta-options/meta-options.module';
+import { MetaOptions } from './meta-options/meta-option.entity';
 
 @Module({
   imports: [UsersModule, PostsModule, AuthModule, TagModule, MetaOptionsModule,
@@ -21,7 +22,8 @@ import { MetaOptionsModule } from './meta-options/meta-options.module';
         entities: [
           User,
           Posts,
-          Tag
+          Tag,
+          MetaOptions
         ],
         synchronize: true,
         port: 5432,
