@@ -19,12 +19,13 @@ import { MetaOptions } from './meta-options/meta-option.entity';
       inject: [],
       useFactory: () => ({
         type: 'postgres',
-        entities: [
-          User,
-          Posts,
-          Tag,
-          MetaOptions
-        ],
+        // entities: [
+        //   User,
+        //   Posts,
+        //   Tag,
+        //   MetaOptions
+        // ],
+        autoLoadEntities: true,
         synchronize: true,
         port: 5432,
         host: 'localhost',
