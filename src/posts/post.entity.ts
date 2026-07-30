@@ -1,5 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { CreatePostMetaOptionDto } from "../meta-options/dtos/crate-post-meta-options.dto";
+import { MetaOptions } from "../meta-options/meta-option.entity";
 
 @Entity()
 export class Posts {
@@ -70,10 +71,7 @@ export class Posts {
     })
     tags?: string[];
     
-    @Column({
-        type: 'varchar',
-        length: 96,
-        nullable: false
-    })
+    @OneToOne(() => MetaOptions)
+    @JoinColumn()
     metaOption?: CreatePostMetaOptionDto[];
 }
