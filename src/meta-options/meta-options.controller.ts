@@ -1,4 +1,4 @@
-import { Controller, Param, Post } from '@nestjs/common';
+import { Body, Controller, Param, Post } from '@nestjs/common';
 import { CreatePostMetaOptionDto } from './dtos/crate-post-meta-options.dto';
 import { MetaOptionsService } from './providers/meta-options.service';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -14,7 +14,7 @@ export class MetaOptionsController {
     }
     
     @Post()
-    create(@Param() createPostMetaOptionDto: CreatePostMetaOptionDto) {
-        this.metaOptionsService.createMetaOption(createPostMetaOptionDto)
+    create(@Body () createPostMetaOptionDto: CreatePostMetaOptionDto) {
+        return this.metaOptionsService.createMetaOption(createPostMetaOptionDto)
     }
 }
